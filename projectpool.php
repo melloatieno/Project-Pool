@@ -9,12 +9,12 @@ require "header.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="projectpool.css">
+    <link rel="stylesheet" href="css/projectpool.css">
     <!-- end of web manifest -->
 </head>
 
 <body>
-   <form name="instregForm" onsubmit="javascript:return WebForm_OnSubmit()" id="instrefForm">
+   <form name="instregForm" method="post" action="projectsubmit.php" onsubmit="javascript:return WebForm_OnSubmit()" id="instrefForm">
       <div>
         <input type="hidden" name="_EVENTTARGET" id="_EVENTTARGET" value>
         <input type="hidden" name="_EVENTARGUMENT" id="_EVENTARGUMENT" value>
@@ -56,12 +56,13 @@ require "header.php";
                    <td>Category</td>
                    <td>Title</td>
                    <td>Student Name</td>
+                   <td>Registration No.</td>
                    <td>Supervisor Name</td>
                    <td>Project Document</td>
                    <td>Project Link</td>
                    <td>Action</td>
                 </tr>
-              <form action="listing.php" method="post">
+              <form action="projectsubmit.php" method="post">
                 <tr>
                    <td>
                      &nbsp;
@@ -141,8 +142,8 @@ require "header.php";
                      <option value="1951">1951</option>
                    </td>
                    <td>
-                     <select name="Category" id="Project_category">
-                       <option value="99">Select One</option>
+                     <select name="category" id="Project_category">
+                       <option value="category">Select One</option>
                        <option>Mechanical Engineering</option>
                        <option>EEE Light</option>
                        <option>EEE Heavy</option>
@@ -164,23 +165,26 @@ require "header.php";
                      </select>
                     </td>
                     <td>
-                      <input type="text" name="Title" id="Project_title">
+                      <input type="text" name="title" id="Project_title" value="">
                     </td>
                     <td>
-                      <input type="text" name="Student" id="std_Name">
+                      <input type="text" name="student" id="std_Name" value="">
                     </td>
                     <td>
-                      <input type="text" name="Supervisor" id="sup_Name">
+                      <input type="text" name="regnumber" id="reg_Num" value="">
                     </td>
                     <td>
-                      <input name="Document" id="document" input name="uploadedfile" type="file" value="Browse" 
+                      <input type="text" name="supervisor" id="sup_Name" value="">
+                    </td>
+                    <td>
+                      <input name="document" id="document" input name="uploadedfile" type="file" value=" " 
 		                style="font-size:16px;width:350px">
                     </td>
                     <td>
-                      <input type="text" name="Link" id="link">
+                      <input type="text" name="link" id="link" value="">
                     </td>
                     <td>
-                        <button type="submit" class="signup">Submit</button>
+                        <button type="submit" class="submit" name="submit">Submit</button>
                     </td>
                 </tr>
                 </form>
@@ -212,5 +216,5 @@ require "header.php";
     </form> 
 
 </body>
-<script src="projectpool.js"></script>
+<script src="js/projectpool.js"></script>
 </html>

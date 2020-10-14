@@ -90,8 +90,8 @@ require "header.php";
         </tr>
         
         <tr>
-            <td>
-                <table id="ctl00_ContentPlaceHolder1_Login1" cellspacing="0" cellpadding="0" border="0" style="color:#333333;background-color:Silver;border-color:#B5C7DE;border-width:1px;border-style:Solid;font-family:Verdana;font-size:Small;border-collapse:collapse;">
+            <td></table>
+               <!-- <table id="ctl00_ContentPlaceHolder1_Login1" cellspacing="0" cellpadding="0" border="0" style="color:#333333;background-color:Silver;border-color:#B5C7DE;border-width:1px;border-style:Solid;font-family:Verdana;font-size:Small;border-collapse:collapse;">
 	<tbody><tr>
 		<td>
                         <table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse">
@@ -136,7 +136,22 @@ require "header.php";
                         </tbody></table>
                     </td>
 	</tr>
-     </tbody></table>
+     </tbody></table>-->
+     <form action="inst_db_connect.php" method="post">
+         <fieldset>
+             <legend>Sign In</legend>
+         <div>
+             <label for="email">Email</label><br>
+             <input type="email" name="email" placeholder="registered email"  value=""><br>
+         </div>
+         <div>
+             <label for="password">Password:</label><br>
+             <input type="password" name="password"  value=""><br><br>
+         </div>
+         <button type="submit" name="signin" id="open" value="Sign In">Sign In</button>
+         </fieldset>
+     </form>
+            <table>
          </td>
             <td style="text-align: left">
             
@@ -151,7 +166,7 @@ require "header.php";
                </p>
             </td>
             <td style="color: #FF0000">
-                        <a href="Docs/UNIVERSITY_REGISTRATION_EXTERNAL_MANUAL.pdf">
+                        <a href="#">
                             University Registration Manual</a>
             </td>
                  

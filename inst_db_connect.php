@@ -1,7 +1,7 @@
 <?php
 require_once "dbconfig.php";
 
-  if(isset($_POST['signup'])){
+if(isset($_POST['signup'])){
     
     $instname= $_POST['institutionname'];
     $email= $_POST['email'];
@@ -18,5 +18,9 @@ require_once "dbconfig.php";
     else{
         echo "error noted".$sql_reg;   
     }
+}
+
+if(isset($_POST['signin'])){
+    header("location:projectpool.php");
 }
 ?>
