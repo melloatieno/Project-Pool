@@ -65,29 +65,29 @@ require "header.php";
        <h2>New Registration For Universities</h2>
          <strong>  Fill in the following and Click Submit to register </strong>
         <br>
-        <form action="" method="post" class="form form-horizontal" style="margin-top:10px;" name="myform" id="myForm" onsubmit="return validateForm();">
+        <form action="inst_db_connect.php" method="post" class="form form-horizontal" style="margin-top:10px;" name="myform" id="myForm" onsubmit="return validateForm();">
             <input id="form-token" type="hidden" name="_csrf" value="">
            
            <input type="hidden" value="0" name="reg_type">
      <div class="form-group row">
-       <label for="inst_Name" class="instName">Institution Name</label>
+       <label for="institutionname" class="instName">Institution Name</label>
      <div>
-       <input type="text" placeholder="enter institution name" name="name" required>
+       <input type="text" placeholder="enter institution name" name="institutionname" required>
      </div> 
      <div class="form-group row">
        <label for="email"><b>Email</b></label>
      </div>
      <div>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="email" placeholder="Enter Email" name="email" required>
      </div>
        <span id="nameErrMsg" class="error"></span> 
      <div>
-      <label for="psw"><b>Password</b></label><br>
-      <input type="password" placeholder="Enter Password" name="psw"  required>
+      <label for="password"><b>Password</b></label><br>
+      <input type="password" placeholder="Enter Password" name="password"  required>
      </div>
       <label for="psw-repeat"><b>Repeat Password</b></label>
       <div>
-       <input type="password" placeholder="Repeat Password" name="psw-repeat"   required>
+       <input type="password" placeholder="Repeat Password" name="password_confirm"   required>
       </div>
       <label>
         <input type="checkbox" checked="" name="remember" style="margin-bottom:15px"> Remember me
@@ -97,7 +97,7 @@ require "header.php";
      <br/>
       <div id="centerdiv" class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signup" id="open">Sign Up</button>
+        <button type="submit" class="signup" name="signup" id="open">Sign Up</button>
       </div>
       <br/><br/>
 </div>
