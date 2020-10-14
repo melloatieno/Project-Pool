@@ -7,13 +7,7 @@
 	$sorted_names = array();
 	$student_attendance = array();
  
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "pproject";
-	//connecting to the database
-	
-	$db = mysqli_connect($servername,$username,$password,$dbname);
+  
 
 	//If the register button is clicked
 	if (isset($_POST['register'])) {

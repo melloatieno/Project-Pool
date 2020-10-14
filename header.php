@@ -16,9 +16,8 @@
      
             <ul>
               <li><a href="index.php">Home</a></li>
-              <li><a rel="noopener" href="universityRegistration.php">Register University</a></li>
               <li><a rel="noopener" href="university.php">Upload Project</a></li>
-              <li><a rel="noopener" href="projectpool.php">Projects</a></li>
+              <li><a rel="noopener" href="projects.php">Projects</a></li>
             </ul>
         </nav>
        </div>

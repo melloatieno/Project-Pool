@@ -65,7 +65,7 @@ require "header.php";
        <h2>New Registration For Universities</h2>
          <strong>  Fill in the following and Click Submit to register </strong>
         <br>
-        <form action="connect.php" method="post" class="form form-horizontal" style="margin-top:10px;" name="myform" id="myForm" onsubmit="return validateForm();">
+        <form action="" method="post" class="form form-horizontal" style="margin-top:10px;" name="myform" id="myForm" onsubmit="return validateForm();">
             <input id="form-token" type="hidden" name="_csrf" value="">
            
            <input type="hidden" value="0" name="reg_type">
@@ -83,11 +83,11 @@ require "header.php";
        <span id="nameErrMsg" class="error"></span> 
      <div>
       <label for="psw"><b>Password</b></label><br>
-      <input type="password" placeholder="Enter Password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+      <input type="password" placeholder="Enter Password" name="psw"  required>
      </div>
       <label for="psw-repeat"><b>Repeat Password</b></label>
       <div>
-       <input type="password" placeholder="Repeat Password" name="psw-repeat" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required>
+       <input type="password" placeholder="Repeat Password" name="psw-repeat"   required>
       </div>
       <label>
         <input type="checkbox" checked="" name="remember" style="margin-bottom:15px"> Remember me
@@ -205,6 +205,6 @@ function isNumberKey(evt){
 <script src="/js/multilevel-menu.js"></script>    
     
 </body>
-<script type="text/javascript" src="index.js"></script>
-<script src="bal.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="js/bal.js"></script>
 </html>

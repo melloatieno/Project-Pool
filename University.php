@@ -59,7 +59,7 @@ require "header.php";
                                     <table>
                                     <tbody><tr>
                                     <td>
-                                        <a id="ctl00_HyperLink2" href="C:\xampp\htdocs\New folder\University Registration.php">New University Registration</a> 
+                                        <a id="ctl00_HyperLink2" href="universityRegistration.php">New University Registration</a> 
 
                                     </td></tr></tbody></table>
                                     </td>
