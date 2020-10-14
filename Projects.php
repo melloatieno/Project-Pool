@@ -1,5 +1,11 @@
 <?php    
 require "header.php";
+
+require_once "dbconfig.php";
+
+$sql ="SELECT * FROM projectsubmitted";
+
+$result = mysqli_query($db, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -18,31 +24,46 @@ require "header.php";
         <div style="text-align: center">
           <table id="tholder1">
             <table id="001" cellspacing="0" cellpadding="3" rules="all" >
-              <tbody>
-                <tr>
-                  <td colspan="9">
-                   <span></span>
-                  </td>
-                </tr>
-
-                <tr id="r001">
-                   <td>##</td>
-                   <td>Year</td>
-                   <td>Category</td>
-                   <td>Title</td>
-                   <td>Student Name</td>
-                   <td>Supervisor Name</td>
-                   <td>Project Document</td>
-                   <td>Project Link</td>
-                   <td>University</td>
-                </tr>
+                <thead>
+                   <th>Year</th>
+                   <th>Category</th>
+                   <th>Title</th>
+                   <th>Student Name</th>
+                   <th>Registration Number</th>
+                   <th>Supervisor Name</th>
+                   <th>Project Document</th>
+                   <th>Project Link</th>
+                   <th>University</th>
+                </thead>
+                  <?php
+                     while($row = mysqli_fetch_assoc($result)){
+                       $year = $row['yr'];
+                       $category = $row['category'];
+                       $title = $row['title'];
+                       $student = $row['student'];
+                       $regnumber = $row['regnumber'];
+                       $supervisor = $row['supervisor'];
+                       $document = $row['document'];
+                       $link = $row['link'];
+                     
+                  ?>
+                <tbody>
+                  <tr>
+                    <td> <?php echo $year; ?></td>
+                    <td> <?php echo $category; ?></td>
+                    <td> <?php echo $title; ?></td>
+                    <td> <?php echo $student; ?></td>
+                    <td> <?php echo $regnumber; ?></td>
+                    <td> <?php echo $supervisor; ?></td>
+                    <td> <?php echo $document; ?></td>
+                    <td> <?php echo $link; ?></td>
+   
+                  </tr>
+                  <?php
+                     }
+                  ?>
+                </tbody>
               
-                <tr>
-                  <td colspan="9">
-                   <span></span>
-                  </td>
-                </tr>
-              </tbody>
             </table>
           
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -65,5 +86,5 @@ require "header.php";
     </form> 
 
 </body>
-<script src="projectpool.js"></script>
+<script src="js/projectpool.js"></script>
 </html>
