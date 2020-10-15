@@ -34,12 +34,29 @@ require "header.php";
                <span id="ct100_lblDate"></span>
               </td>
               <td style="text-align: right; height: 21px">
-              <a id="ct100_LinkButton10" href="D:\New folder\Landing page.html">Go to Home Page</a>
+            
                &nbsp; |
-                 You are logged in as:"
+               <?php
+                  session_start();
+               ?>
+                 You are logged in as:" <?php  echo $_SESSION['email'];?>
                  <span id=""><span>
                    &nbsp;
                      "
+              </td>
+              <td>
+              <!--<?php
+              /*
+                if(isset($_POST['logout'])){
+                  session_start();
+                  session_destroy();
+               
+                  header("location:index.php");
+               }*/
+              ?>
+               <form action="projectpool.php" method="post">
+                 <input type="submit" name="logout" value="Logout">
+               </form>-->
               </td>
              </tr>
             <table id="001" cellspacing="0" cellpadding="3" rules="all" >

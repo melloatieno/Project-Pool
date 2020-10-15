@@ -8,19 +8,46 @@ if(isset($_POST['signup'])){
     $pswd= $_POST['password'];
     $password = MD5 ($pswd);
 
-    $sql_reg= "INSERT INTO InstitutionReg(Institutionname,email,pssword) VALUES('$instname','$email','$password')";
 
-    $check= mysqli_query($db, $sql_reg);
+    $s = "SELECT * FROM InstitutionReg Where email = '$email'";
+    $result=mysqli_query($db, $s);
+    $num = mysqli_num_rows($result);
 
-    if($check){
-        header("location:university.php");
+    if($num==1){
+        header("location: usedemail.php");
     }
     else{
-        echo "error noted".$sql_reg;   
+        $sql_reg= "INSERT INTO InstitutionReg(Institutionname,email,pssword) VALUES('$instname','$email','$password')";
+
+        $check= mysqli_query($db, $sql_reg);
+    
+        if($check){
+            header("location:university.php");
+        }
     }
 }
 
 if(isset($_POST['signin'])){
-    header("location:projectpool.php");
+    session_start();
+     
+     $email = $_POST['email'];
+     $pass = $_POST['password'];
+     $password = MD5($pass);
+
+     $sql ="SELECT * FROM InstitutionReg WHERE email = '$email' && pssword = '$password'";
+
+     $result = mysqli_query($db, $sql);
+       
+     $num = mysqli_num_rows($result);
+     if($num == 1){
+
+         $_SESSION['email']= $email;
+         header("location:projectpool.php");
+     }
+     else{
+         echo "take a better look at your credentials";
+     }
 }
+
+
 ?>

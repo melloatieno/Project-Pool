@@ -19,7 +19,7 @@ require "header.php";
 </head>
 
 <body>
-  <form name="aspnetForm" method="post" action="D:\New folder\project pool.html" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+  <form name="aspnetForm" method="post" action="inst_db_connect.php" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
     <div>
      <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
      <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
@@ -90,68 +90,53 @@ require "header.php";
         </tr>
         
         <tr>
-            <td></table>
-               <!-- <table id="ctl00_ContentPlaceHolder1_Login1" cellspacing="0" cellpadding="0" border="0" style="color:#333333;background-color:Silver;border-color:#B5C7DE;border-width:1px;border-style:Solid;font-family:Verdana;font-size:Small;border-collapse:collapse;">
+            <td>
+ <table id="ctl00_ContentPlaceHolder1_Login1" cellspacing="0" cellpadding="0" border="0" style="color:#333333;background-color:Silver;border-color:#B5C7DE;border-width:1px;border-style:Solid;font-family:Verdana;font-size:Small;border-collapse:collapse;">
 	<tbody><tr>
 		<td>
                         <table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse">
                         
                             <tbody><tr>
                                 <td>
-                                    <table border="0" cellpadding="0">
-                                        <tbody><tr>
-                                            <td align="center" style="font-weight: bold; font-size: 0.9em; color: white;
-                                                background-color: #507cd1">
-                                                Official</td>
-                                        </tr>
-                                        <tr>
-                                            <td align="left">
-                                                <label for="Login1_UserName" id="Login1_UserNameLabel">User Name:</label><br>
-                                                <input name="Login1_UserName" type="text" id="Login1_UserName" style="font-size:0.8em;width:80px;" required>
-                                                <span id="Login1_UserNameRequired" title="User Name is required." style="color:Red;visibility:hidden;">*</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td align="left">
-                                                <label for="Login1_Password" id="Login1_PasswordLabel">Password:</label><br>
-                                                <input name="Login1_Password" type="password" id="Login1_Password" onkeyup="this.value = this.value.toLowerCase();" style="font-size:0.8em;width:80px;text-transform: lowercase;" required>
-                                                <span id="Login1_PasswordRequired" title="Password is required." style="color:Red;visibility:hidden;">*</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center" style="color: red">
-                                                
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center">
-                                                <a href="C:\xampp\htdocs\New folder\project pool.html"></a>
-                                                <input type="submit" name="LoginButton" value="Log In" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;Login1$LoginButton&quot;, &quot;&quot;, true, &quot;Login1&quot;, &quot;&quot;, false, false))" id="Login1_LoginButton" 
-                                                 style="color:#284E98;background-color:White;border-color:#507CD1;border-width:1px;border-style:Solid;font-family:Verdana;font-size:0.8em;border-top-style: outset; border-right-style: outset; border-left-style: outset; border-bottom-style: outset">
-                                            </td>
-                                        </tr>
-                                    </tbody></table>
+        <form method="post" action="inst_db_connect.php">                        
+        <table border="0" cellpadding="0">
+            <tbody><tr>
+                <td align="center" style="font-weight: bold; font-size: 0.9em; color: white;
+                    background-color: #507cd1">
+                    Official</td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label for="Login1_UserName" id="Login1_UserNameLabel">Email:</label><br>
+                    <input name="email" type="email" id="Login1_UserName" style="font-size:0.8em;width:80px;" required>
+                    <span id="Login1_UserNameRequired" title="User Name is required." style="color:Red;visibility:hidden;">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <label for="Login1_Password" id="Login1_PasswordLabel">Password:</label><br>
+                    <input name="password" type="password" id="Login1_Password" onkeyup="this.value = this.value.toLowerCase();" style="font-size:0.8em;width:80px;text-transform: lowercase;" required>
+                    <span id="Login1_PasswordRequired" title="Password is required." style="color:Red;visibility:hidden;">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="color: red">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="submit" name="signin" value="Sign In" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;Login1$LoginButton&quot;, &quot;&quot;, true, &quot;Login1&quot;, &quot;&quot;, false, false))" id="Login1_LoginButton" 
+                        style="color:#284E98;background-color:White;border-color:#507CD1;border-width:1px;border-style:Solid;font-family:Verdana;font-size:0.8em;border-top-style: outset; border-right-style: outset; border-left-style: outset; border-bottom-style: outset">
+                </td>
+            </tr>
+        </tbody></table></form>
                                 </td>
                             </tr>
                         </tbody></table>
                     </td>
 	</tr>
-     </tbody></table>-->
-     <form action="inst_db_connect.php" method="post">
-         <fieldset>
-             <legend>Sign In</legend>
-         <div>
-             <label for="email">Email</label><br>
-             <input type="email" name="email" placeholder="registered email"  value=""><br>
-         </div>
-         <div>
-             <label for="password">Password:</label><br>
-             <input type="password" name="password"  value=""><br><br>
-         </div>
-         <button type="submit" name="signin" id="open" value="Sign In">Sign In</button>
-         </fieldset>
-     </form>
-            <table>
+     </tbody></table>
          </td>
             <td style="text-align: left">
             

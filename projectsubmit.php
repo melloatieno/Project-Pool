@@ -22,6 +22,7 @@ require_once "dbconfig.php";
         echo "error occured".$sql;
     }
      
+   
 
  }
 ?>
